@@ -6,5 +6,6 @@
 
 size_t	ft_strlen(char *s);
 int ft_isalpha(int c);
+int ft_isdigit(int c);
 
 #endif

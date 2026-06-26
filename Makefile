@@ -3,7 +3,7 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_strlen.c ft_isalpha.c
+SRCS = ft_strlen.c ft_isalpha.c ft_digit.c
 
 OBJS = $(SRCS:.c=.o)
 
