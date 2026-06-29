@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static void	copy_forward(unsigned char *dst, const unsigned char *src, size_t len)
+static void	copy_forward(unsigned char *dst, unsigned char *src, size_t len)
 {
 	size_t	i;
 
@@ -12,25 +12,27 @@ static void	copy_forward(unsigned char *dst, const unsigned char *src, size_t le
 	}
 }
 
-static void	copy_backward(unsigned char *dst, const unsigned char *src, size_t len)
+static void	copy_backward(unsigned char *dst, unsigned char *src, size_t len)
 {
-	size_t	i;
-
-	i = len;
-	while (i > 0)
+	while (len > 0)
 	{
-		i--;
-		dst[i] = src[i];
+		len--;
+		dst[len] = src[len];
 	}
 }
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	unsigned char	*d;
+	unsigned char	*s;
+
 	if (!dst && !src)
 		return (NULL);
-	if (dst < src)
-		copy_forward((unsigned char *)dst, (const unsigned char *)src, len);
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if (d < s)
+		copy_forward(d, s, len);
 	else
-		copy_backward((unsigned char *)dst, (const unsigned char *)src, len);
+		copy_backward(d, s, len);
 	return (dst);
 }
