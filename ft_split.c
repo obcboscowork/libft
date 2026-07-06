@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: obhanja <obhanja@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/06 19:33:16 by obhanja           #+#    #+#             */
+/*   Updated: 2026/07/06 19:33:16 by obhanja          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	word_count(const char *s, char c)
@@ -53,8 +65,8 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != '\0')
 		{
 			str[word_index] = ft_substr(s, i, word_len(s, i, c));
-			word_index++;
 			i = i + word_len(s, i, c);
+			word_index++;
 		}
 	}
 	str[word_index] = NULL;
