@@ -18,7 +18,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 	str = ft_itoa(n);
 	if (str == NULL)
-		return;
+		return ;
 	ft_putstr_fd(str, fd);
 	free(str);
 }
