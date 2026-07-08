@@ -6,7 +6,7 @@
 /*   By: obhanja <obhanja@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 19:43:54 by obhanja           #+#    #+#             */
-/*   Updated: 2026/07/06 20:06:12 by obhanja          ###   ########.fr       */
+/*   Updated: 2026/07/09 00:23:02 by obhanja          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 size_t	ft_strlen(const char *s);
 int		ft_isalpha(int c);
@@ -50,5 +56,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+t_list	*ft_lstnew(void *content);
 
 #endif
